@@ -1,44 +1,37 @@
-# Welcome
+# Benvingut
 
-There's a lot of outdated information on the Web that leads new PHP users astray, propagating bad practices and bad
-code. This must stop. _PHP: The Right Way_ is an easy-to-read, quick reference for PHP best practices, accepted coding
-standards, and links to authoritative tutorials around the Web.
+Avui en dia existeix molta informació antiquada sobre PHP, que guia als nous programadors per el mal camí per les males practiques, i en conseqüència el mal codi. Això te que parar. _PHP: La Manera Correcte_ es una referencia practica i fàcil d'entendre amb els millors mètodes, estàndards de codi i enllaços a tutorials autoritzats en a la web.
 
-## Translations
+## Traduccions
 
-_PHP: The Right Way_ is (or soon will be) translated into many different languages:
+_PHP: La Manera Correcte_ ha sigut (o molt aviat serà) traduït a diferents idiomes:
 
-* [English](http://www.phptherightway.com)
-* [Catalan](http://ca.phptherightway.com)
+* [Bulgarian](http://bg.phptherightway.com/)
+* [Català](http://ca.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
+* [English](http://www.phptherightway.com)
 * [Japanese](http://ja.phptherightway.com)
-* [Italian](http://it.phptherightway.com)
 * [Polish](http://pl.phptherightway.com/)
 * [Portuguese](http://br.phptherightway.com/)
 * Russian (Coming Soon)
 * [Spanish](http://es.phptherightway.com)
 * [Ukrainian](http://iflista.github.com/php-the-right-way/)
-* [Bulgarian](http://bg.phptherightway.com/)
 
-## Disclaimer
+## Advertència
 
-_There is no canonical way to use PHP_. However, this website is a humble display of best practices,
-available options, and good information. It aims to introduce new PHP developers and to rethink seasoned pros with fresh
-ideas.
+_No existeix una manera canònica de utilitzar PHP_. No obstant, aquest lloc es una humida exposició dels millors mètodes, alternatives disponibles i bona informació sobre PHP. El seu propòsit es presentar PHP a nous desenvolupadors i oferir noves ideàs als professionals amb experiència.
 
-This is a living document and will continue to be updated with more helpful information and examples as they become
-available.
+Considerem aquest lloc com un document viu i es continuara actualitzant amb més informació útil i exemples segons es tornen disponibles.
 
-## How to Contribute
+## Com contribuir
 
-Help make this website the best resource for new PHP programmers! [Contribute on GitHub][1]
+Ajuda a que aquest lloc es converteixi en el millor recurs per nous programadors en PHP! [Contribueix en GitHub][1]
 
-## Spread the Word!
+## Corre la veu!
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP developers
-know where to find good information!
+_PHP: La Manera Correcte_ fa disponible imatges de pancarta (_banners_) que pots utilitzar per el teu lloc web personal. Demostra el teu suport i deixe saber als nous desenvolupadors en PHP, on es pot trobar bona informació!
 
-[See Banner Images][2]
+[Veure les imatges de pancarta (_banners_)][2]
 
 [1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
 [2]: /banners.html

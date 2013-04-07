@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
     <head>
         <meta charset="utf-8"/>
-        <title>{% if page.title %}{{ page.title }} - {% endif %}PHP: The Right Way</title>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}PHP: La Manera Correcte</title>
         <meta name="description" content="{{ page.description }}"/>
         <meta name="robots" content="index,follow,archive"/>
         <meta property="og:image" content="http://www.phptherightway.com/images/og-logo.png"/>
@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/styles/all.css"/>
-        <link rel="stylesheet" href="/styles/print.css" media="print, handheld"/>
         <link rel="stylesheet" href="/styles/syntax.css"/>
         <link rel="icon" href="/images/favicon.png" type="image/png"/>
         <script>
@@ -30,9 +29,9 @@
     </head>
     <body>
         <nav class="site-navigation">
-            <div class="build-date">Last Updated: {{ site.time }}</div>
+            <div class="build-date">Última actualització: {{ site.time }}</div>
             <ul>
-                <li><a href="/#site-header">Welcome</a></li>
+                <li><a href="/#site-header">Benvingut</a></li>
                 {% assign lastIsChild = false %}
                 {% for post in site.posts reversed %}
                     {% if post.isChild and lastIsChild != true %}<ul>{% endif %}
@@ -40,7 +39,7 @@
                     <li><a href="/#{{ post.title | downcase | replace:' ','_' | replace:'(','' | replace:')','' | replace:'.','' | replace:'-','' }}">{{ post.title }}</a>
                     {% assign lastIsChild = post.isChild %}
                 {% endfor %}
-                <li><a href="/#site-footer">Credits</a></li>
+                <li><a href="/#site-footer">Crèdits</a></li>
             </ul>
         </nav>
         <div class="site-content">
@@ -52,27 +51,27 @@
             <header class="site-header" id="site-header">
                 <hgroup>
                     <h1 class="site-title"><a href="/">PHP</a></h1>
-                    <h2 class="site-slogan">The Right Way.</h2>
+                    <h2 class="site-slogan">La Manera Correcte.</h2>
                 </hgroup>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.phptherightway.com/" data-size="large" data-hashtags="php">Tweet</a>
+                Traducció al Català: <a href="https://github.com/WaKeMaTTa/" target="_blank">WaKeMaTTa (Mohamed Ziata)</a>
             </header>
             {{ content }}
             <footer class="site-footer" id="site-footer">
-                <h2 class="epsilon">Created and maintained by</h2>
+                <h2 class="epsilon">Creat i mantingut per</h2>
                 <ul>
                     <li><a href="http://twitter.com/codeguy">Josh Lockhart</a></li>
                 </ul>
 
-                <h2 class="epsilon">Project collaborators</h2>
+                <h2 class="epsilon">Col·laboradors del projecte</h2>
                 <ul>
                     <li><a href="http://krisjordan.com/">Kris Jordan</a></li>
                     <li><a href="http://philsturgeon.co.uk/">Phil Sturgeon</a></li>
                 </ul>
 
-                <h2 class="epsilon">Project contributors</h2>
-                <div id="contributors">Loading&hellip;</div>
+                <h2 class="epsilon">Contribuents al projecte</h2>
+                <div id="contributors">Càrrega&hellip;</div>
 
-                <h2 class="epsilon">Project sponsors</h2>
+                <h2 class="epsilon">Patrocinadors del projecte</h2>
                 <ul class="mbd">
                     <li><a href="http://www.newmediacampaigns.com">New Media Campaigns</a></li>
                 </ul>
