@@ -1,19 +1,21 @@
 ---
+title: Espais de Noms
 isChild: true
 ---
 
-## Namespaces {#namespaces_title}
+## Espais de Noms
 
-As mentioned above, the PHP community has a lot of developers creating lots of code. This means that one library's PHP code may use the same class name as another library. When both libraries are used in the same namespace, they collide and cause trouble.
+Com hem dit anteriorment, la comunitat de PHP té molts desenvolupadors creant una gran quantitat de codi font. Això vol dir que hi ha la possibilitat que dues llibreries diferents utilitzin el mateix nom per a una classe en el seu codi. Quan les dues llibreries s'usen dins el mateix espai de noms això s'anomena com una col·lisió i pot causar problemes.
 
-_Namespaces_ solve this problem. As described in the PHP reference manual, namespaces may be compared to operating system directories that _namespace_ files; two files with the same name may co-exist in separate directories. Likewise, two PHP classes with the same name may co-exist in separate PHP namespaces. It's as simple as that.
+Els _Espais de Noms_ resolen aquest problema. Com es descriu en el manual de referència de PHP, els espais de noms són similars als directoris que separen els arxius en el sistema operatiu. Dos arxius amb el mateix nom poden coexistir en directoris separats. Igualment, dues classes de PHP amb el mateix nom poden coexistir en espais de noms separats, és tan simple com això.
 
-It is important for you to namespace your code so that it may be used by other developers without fear of colliding with other libraries.
+És important que separi el seu codi amb un espai de noms perquè pugui ser usat per altres desenvolupadors sense la preocupació que causi problemes amb altres llibreries.
 
-One recommended way to use namespaces is outlined in [PSR-0][psr0], which aims to provide a standard file, class and namespace convention to allow plug-and-play code.
+Un dels mètodes recomanats per a l'ús d'espais de noms s'indica al [PSR-0][psr0], el qual es proposa proveir una convenció estàndard per als arxius, classes i els espais de noms, la qual cosa facilita l'intercanvi i ús del codi en diferents projectes.
 
-* [Read about Namespaces][namespaces]
-* [Read about PSR-0][psr0]
 
-[namespaces]: http://php.net/manual/en/language.namespaces.php
+* [Llegir sobre els Espais de Noms][namespaces]
+* [Llegir sobre el PSR-0][psr0]
+
+[namespaces]: http://php.net/manual/es/language.namespaces.php
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
