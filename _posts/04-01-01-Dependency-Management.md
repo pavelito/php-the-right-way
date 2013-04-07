@@ -1,10 +1,15 @@
-# Dependency Management {#dependency_management_title}
+---
+title: Gestió de Dependències
+---
 
-There are a ton of PHP libraries, frameworks, and components to choose from. Your project will likely use several of them — these are project dependencies. Until recently, PHP did not have a good way to manage these project dependencies. Even if you managed them manually, you still had to worry about autoloaders. No more.
+# Gestió de Dependències
 
-Currently there are two major package management systems for PHP - Composer and PEAR. Which one is right for you? The answer is both.
+Hi ha un gran nombre de llibreries, estructures base de desenvolupament (*frameworks*) i components de PHP d'on escollir i el més probable és que el seu projecte utilitzi diversos. A aquests se'ls crida dependències de projecte. Fins molt recentment, PHP no tenia una manera fàcil de gestionar aquests dependències. Encara que siguis es feia càrrec d'aquests manualment, encara hauria de mantenir-se al tant dels carregadors automàtics (autoloaders). Ara ja no és així.
 
- * Use **Composer** when managing dependencies for a single project.
- * Use **PEAR** when managing dependencies for PHP as a whole on your system.
+Actualment hi ha dos sistemes principals de gestió de paquets per a PHP: Composer i PEAR. Quin és l'adequat per a vostè? La resposta és, tots dos.
 
-In general, Composer packages will be available only in the projects that you explicitly specify whereas a PEAR package would be available to all of your PHP projects. While PEAR might sound like the easier approach at first glance, there are advantages to using a project-by-project approach to your dependencies.
+* Utilitzeu **Composer** quan manegi les dependències d'un sol projecte.
+
+* Utilitzeu **PEAR** quan manegi les dependències de tot el sistema de PHP en la seva plataforma.
+
+Generalment, els paquets de Composer només estaran disponibles en els projectes que especifiqueu explícitament, mentre que un paquet de PEAR estaria disponible a tots els projectes sota el sistema PHP. Potser PEAR sembli la proposta més accessible a primera vista, però, també hi ha avantatges per treballar amb les dependències amb Composer sobre la base del projecte en què s'està treballant.
