@@ -1,11 +1,11 @@
 ---
-title: Use the Current Stable Version (5.4)
+title: Utilitza la Actual Versió Estable (5.4)
 isChild: true
 ---
 
-## Use the Current Stable Version (5.4) {#use_the_current_stable_version_54_title}
+## Utilitza la Actual Versió Estable (5.4)
 
-If you are just getting started with PHP make sure to start with the current stable release of [PHP 5.4][php-release]. PHP has made great strides adding powerful [new features](#language_highlights) over the last few years. Don't let the minor version number difference between 5.2 and 5.4 fool you, it represents _major_ improvements. If you are looking for a function or it's usage, the documentation on the [php.net][php-docs] website will have the answer.
+Si està prenent els seus primers passos amb PHP assegureu-vos de començar amb l'actual versió estable (current stable) de [PHP 5.4][php-release]. En els últims anys, s'ha observat un gran progrés en afegir [noves i potents característiques](#language_highlights) a PHP. Encara que la diferència entre les versions 5.2 i 5.4 aparenta ser mínima, en realitat la nova versió representa _grans_ millores en el sistema. Si té algun dubte o qüestió pel que fa al mètode i ús d'una funció en particular, trobarà la resposta en el lloc de documentació [php.net][php-docs].
 
 [php-release]: http://www.php.net/downloads.php
-[php-docs]: http://www.php.net/manual/en/
+[php-docs]: http://www.php.net/manual/es/

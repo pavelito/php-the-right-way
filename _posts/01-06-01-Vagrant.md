@@ -1,23 +1,15 @@
 ---
+title: Vagrant
 isChild: true
 ---
 
-## Vagrant {#vagrant_title}
+## Vagrant
 
-Running your application on different environments in development and production can lead to strange bugs 
-popping up when you go live. It's also tricky to keep different development environments up to date with the same 
-version for all libraries used when working with a team of developers. 
+Corrent la vostre aplicació en diferents entorns en desenvolupament i producció pot conduir a errors estranys que fan esclatar per amunt del vostre nivell. També és difícil de mantenir entorns de desenvolupament diferents al dia amb la mateixa versió per a totes les biblioteques que utilitzen quan es treballa amb un equip de desenvolupadors.
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you 
-should consider using a virtual machine. This sounds tricky, but using [Vagrant][vagrant] you can set up a simple 
-virtual machine with only a few steps. These base boxes can then be set up manually, or you can use "provisioning" 
-software such as [Puppet][puppet] or [Chef][chef] to do this for you. Provisioning the base box is a great way to 
-ensure that multiple boxes are set up in an identical fashion and removes the need for you to maintain complicated 
-"set up" command lists. You can also "destroy" your base box and recreate it without many manual steps, making it
-easy to create a "fresh" installation.
+Si estas desenvolupant en Windows i la implementació es fa en Linux (o qualsevol altre sistema que no sigui Windows) o estan desenvolupant en un equip, ha de considerar l'ús d'una màquina virtual. Això sona complicat, però amb [Vagrant][vagrant] vostè pot configurar una màquina virtual simple amb només uns pocs passos. Aquesta caixa base es pot configurar manualment, o bé pot utilitzar programari com [Puppet][puppet] o [Chef][chef] que farà aquesta tasque per tu. La caixa base és una gran manera d'assegurar-se que les caixes múltiples es configuren en forma idèntica i elimina la necessitat per tu, la de “crear” les llistes d'ordres. També pot "destruir" la seva caixa base i tornar-la a crear amb molt pocs passos manuals, es fàcil crear un "fresc" de la instal·lació.
 
-Vagrant creates shared folders used to share your code between your host and your virtual machine, meaning you can 
-create and edit your files on your host machine and then run the code inside your virtual machine.
+Vagrant crea carpetes per compartir el vostre codi entre el vostre amfitrió i la vostra màquina virtual, significa pot crear i editar els vostres arxius en la vostra màquina amfitriona i llavors executar-los dins la vostra màquina virtual.
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
