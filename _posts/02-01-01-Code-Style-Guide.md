@@ -1,41 +1,25 @@
-# Code Style Guide  {#code_style_guide_title}
+---
+title: Guía de Estilo de Código
+---
 
-The PHP community is large and diverse, composed of innumerable libraries, frameworks, and components. It is common for
-PHP developers to choose several of these and combine them into a single project. It is important that PHP code adhere
-(as close as possible) to a common code style to make it easy for developers to mix and match various libraries for
-their projects.
+# Guia d'Estil de Codi
 
-The [Framework Interop Group][fig] has proposed and approved a series of style recommendations, known as [PSR-0][psr0], 
-[PSR-1][psr1] and [PSR-2][psr2]. Don't let the funny names confuse you, these recommendations are merely 
-a set of rules that some projects like Drupal, Zend, Symfony, CakePHP, phpBB, AWS SDK, FuelPHP, Lithium, etc are starting 
-to adopt. You can use them for your own projects, or continue to use your own personal style.
+La comunitat darrere de PHP és enorme i diversa, composta d'innombrables llibreries, estructures base de desenvolupament (*frameworks*) i components. És comú que desenvolupadors en PHP escullin d'entre aquests i els combinin en un sol projecte. Per això és important que el codi PHP s'adhereixi (el més a prop possible) a un estil de codi comú perquè es faciliti el treball dels desenvolupadors en combinar una varietat de llibreries per als seus projectes.
 
-Ideally you should write PHP code that adheres to a known standard. This could be any combination of PSR's, or one 
-of the coding standards made by PEAR or Zend. This means other developers can easily read and work with your code, 
-and applications that implement the components can have consistency even when working with lots of third-party code. 
+El [Framework Interop Group][fig] (abans conegut com el 'PHP Standards Group') ha proposat i aprovat una sèrie de recomanacions d'estil, conegudes com [PSR-0][psr0], [PSR-1][psr1] i [PSR-2][psr2]. No deixeu que els títols rars us confonguin, aquestes recomanacions són simplement un conjunt de normes que alguns projectes com Drupal, Zend, CakePHP, phpBB, AWS SDK, FuelPHP, Lithium i altres, han començat a adoptar. Vostè pot utilitzar aquestes normes en els seus propis projectes o continuar amb el vostre propi estil.
 
-* [Read about PSR-0][psr0]
-* [Read about PSR-1][psr1]
-* [Read about PSR-2][psr2]
-* [Read about PEAR Coding Standards][pear-cs]
-* [Read about Zend Coding Standards][zend-cs]
+Seria ideal que escrivís codi PHP que s'adhereix a un o més d'aquests estàndards perquè altres desenvolupadors puguin llegir i treballar amb el seu codi fàcilment. Els estàndards se afegeixen a l'estàndard previ, així que utilitzar PSR-1 requerix el us de PSR-0, però no requereix PSR-2.
 
-You can use [PHP_CodeSniffer][phpcs] to check code against any one of these recommendations, and plugins for text editors 
-like [Sublime Text 2][st-cs] to be given real time feedback. 
+* [Llegiu sobre PSR-0][psr0]
+* [Llegiu sobre PSR-1][psr1]
+* [Llegiu sobre PSR-2][psr2]
 
-Use Fabien Potencier's [PHP Coding Standards Fixer][phpcsfixer] to automatically modify your code syntax so that it
-conforms with these standards, saving you from fixing each problem by hand.
-
-English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily readable 
-by all current and future parties who may be working on the codebase.
+Podeu utilitzar la configuració de [phpcs-psr][phpcs-psr] per l'eina [phpcs-psr][phpcs-psr] i verificar que el seu codi s'adhereixi a les normes i recomanacions estipulades en aquests estàndards. També podeu fer servir el [PHP Coding Standards Fixer][phpcsfixer] de Fabien Potencier per modificar el sintaxi del seu codi i així automàticament es conformi a aquests estàndards, estalviant el temps i esforç que requeriria arreglar el problema a mà.
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
-[psr3]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
-[pear-cs]: http://pear.php.net/manual/en/standards.php
-[zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
-[st-cs]: https://github.com/benmatselby/sublime-phpcs
+[phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
 [phpcsfixer]: http://cs.sensiolabs.org/
