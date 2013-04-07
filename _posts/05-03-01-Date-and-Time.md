@@ -1,62 +1,60 @@
 ---
+title: Data i Hora
 isChild: true
 ---
 
-## Date and Time {#date_and_time_title}
+## Data i Hora
 
-PHP has a class named DateTime to help you when reading, writing, comparing or calculating with date and time. There are
-many date and time related functions in PHP besides DateTime, but it provides nice object-oriented interface to most
-common uses. It can handle time zones, but that is outside this short introduction.
+PHP disposa de una classe anomenada **DateTime** que t'he ajuda en la lectura, escriptura, comparacions i calculació de les dades i les hores. Existeixen moltes funcions en PHP relacionades amb el manipulació de dates i hores, però la classe **DateTime** prove amb una millor interfície orientada a objectes per les situacions més comunes. També tenen la capacitat de utilitzar els fusos horaris (però aquest funció la considerem fora de la nostra petita introducció).
 
-To start working with DateTime, convert raw date and time string to an object with `createFromFormat()` factory method
-or do `new \DateTime` to get the current date and time. Use `format()` method to convert DateTime back to a string for
-output.
+Per començar a traballar amb DateTime primer tenim que convertir les cadenes de textos les que contenen la data i l'hora, a un objecte amb el mètode de fabricació `createFromFormat()` o també ho podem crear un objecte amb `new \DateTime` que contindrà la data i l'hora actual. Después, pot utilitzar el mètode `format()` per convertir el objecte DateTime a altre cop a una cadena de text i imprimir-la:
+
 {% highlight php %}
 <?php
-$raw = '22. 11. 1968';
-$start = \DateTime::createFromFormat('d. m. Y', $raw);
+$data = '22. 11. 1968';
+$inici = \DateTime::createFromFormat('d. m. Y', $data);
 
-echo 'Start date: ' . $start->format('m/d/Y') . "\n";
+echo "Data de Inici: " . $inici->format('m/d/Y') . "\n";
 {% endhighlight %}
 
-Calculating with DateTime is possible with the DateInterval class. DateTime has methods like `add()` and `sub()` that
-take a DateInterval as an argument. Do not write code that expect same number of seconds in every day, both daylight
-saving and timezone alterations will break that assumption. Use date intervals instead. To calculate date difference use
-the `diff()` method. It will return new DateInterval, which is super easy to display.
+Es pot utilitzar la classe DateInterval per realitzar calculacions amb DateTime. La classe DateTime te mètodes amb `add()` i `sub()` que requereixen que es pasi un DateInterval com argument. Mai escriguis codi que compte amb el mateix numero de segons en tots els dies, ja que els ajusta del fusos horaris i el horari de estiu (daylight savings time) invalidaría aquesta suposició. En comptes d'això, utilitza els intervals de dates per fer les seves calculacions. Per calcular la diferencia entre dades utilitza el mètode `diff()`. Aquest li retornarà un `return new DateInterval`, el qual pot ser fàcilment imprès en a la pantalla.
+
 {% highlight php %}
 <?php
-// create a copy of $start and add one month and 6 days
-$end = clone $start;
-$end->add(new \DateInterval('P1M6D'));
+// Crea un copia de %inici i afegeix un mes i 6 dies
+$final = clone $inici;
+$final->add(new \DateInterval('P1M6D'));
 
-$diff = $end->diff($start);
-echo 'Difference: ' . $diff->format('%m month, %d days (total: %a days)') . "\n";
-// Difference: 1 month, 6 days (total: 37 days)
+$diferencia = $final->diff($inici);
+echo "Diferencia: " . $diff->format('%m mes, %d dies (total: %a dies)') . "\n";
+// Diferencia: 1 mes, 6 dies (total: 37 dies)
 {% endhighlight %}
 
-On DateTime objects you can use standard comparison:
+Es posible comparar fàcilmente els objectes DateTime:
+
 {% highlight php %}
 <?php
-if ($start < $end) {
-    echo "Start is before end!\n";
+if($inici < $final) {
+    echo "¡El inici succeeix abans que el final!\n";
+}
+{% endhighlight %}
+    
+Aquest ultim exemple demostre com s'utilitza la classe DatePeriod per iterar sobre incidències. El objecte pren 2 objectes DateTime, un per el inici i l'altre per el final, i el interval que defineix el numero de incidències periòdiques que es retornen.
+
+{% highlight php %}
+<?php
+// Imprimir tots els dijous entre $inici i $final
+$intervalDePeriode = \DateInterval::createFromDateString('first thursday');
+$intervalDePeriode = new \DatePeriod($inici, $intervalDePeriode, $final, \DatePeriod::EXCLUDE_START_DATE);
+foreach($intervalDePeriode as $data)
+{
+    // Imprimir cada data en el període
+    echo $data->format('m/d/Y') . " ";
 }
 {% endhighlight %}
 
-One last example to demonstrate the DatePeriod class. It is used to iterate over recurring events. It can take two
-DateTime objects, start and end, and the interval for which it will return all events in between.
-{% highlight php %}
-<?php
-// output all thursdays between $start and $end
-$periodInterval = \DateInterval::createFromDateString('first thursday');
-$periodIterator = new \DatePeriod($start, $periodInterval, $end, \DatePeriod::EXCLUDE_START_DATE);
-foreach ($periodIterator as $date) {
-    // output each date in the period
-    echo $date->format('m/d/Y') . ' ';
-}
-{% endhighlight %}
+* [Llegeix sobre la classe DateTime][datetime]
+* [Com formatatjar la data][dateformat] (Opcions dels formats acceptats per una data)
 
-* [Read about DateTime][datetime]
-* [Read about date formatting][dateformat] (accepted date format string options)
-
-[datetime]: http://www.php.net/manual/book.datetime.php
-[dateformat]: http://www.php.net/manual/function.date.php
+[datetime]: http://php.net/manual/es/book.datetime.php
+[dateformat]: http://php.net/manual/es/function.date.php

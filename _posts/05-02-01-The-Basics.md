@@ -1,12 +1,11 @@
 ---
+title: Els Basics
 isChild: true
 ---
 
-## The Basics {#the_basics_title}
+## Els Basics
 
-PHP is a vast language that allows coders of all levels the ability to produce code not only quickly, but efficiently. 
-However while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor 
-of short cuts and/or bad habits. To help combat this common issue, this section is aimed at reminding coders of the 
-basic coding practices within PHP.
+PHP és un llenguatge que permet als programadors apliar a tots els nivells la capacitat de produir codi, no només ràpid, sino també eficaç.
+No obstant això, mentre avances a través del llenguatge, sovint oblidem el bàsic que primer vam aprendre (o *overlooked*) a favor de dreceres i/o mals hàbits. Per ajudar a combatre aquest problema comú, aquesta secció té com a objectiu recordar als programadors de les pràctiques bàsiques de codificació en PHP.
 
-* Continue reading on [The Basics](/pages/The-Basics.html)
+* Segeix llegint [Els Basics](/pages/The-Basics.html)

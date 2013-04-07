@@ -1,1 +1,5 @@
-# Coding Practices {#coding_practices_title}
+---
+title: Pràctiques de Codi
+---
+
+# Pràctiques de Codi 
