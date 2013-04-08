@@ -1,75 +1,60 @@
 ---
-title: Databases
+title: Bases de dades
 ---
 
-# Databases {#databases_title}
+# Bases de dades
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option _until PHP 5.1.0_ was to use native drivers such as [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], etc.
+Moltes vegades el codi PHP fan servir una base de dades per guardar la informació. Vostè té diverses opcions per connectar i interactuar amb la base de dades. L'opció recomanada _fins PHP 5.1.0_  es utilitzar controladors nadius, com ara [MySQL][mysql], [MySQLi][mysqli], [PgSQL][pgsql], etc.
 
-Native drivers are great if you are only using ONE database in your application, but if, for example, you are using MySQL and a little bit of MSSQL,
-or you need to connect to an Oracle database, then you will not be able to use the same drivers. You'll need to learn a brand new API for each
-database &mdash; and that can get silly.
+Els controladors nadius són una molt bona opció si vostè vol utilitzar només una base de dades en l'aplicació, però si per exemple, està utilitzant MySQL i una mica de MSSQL, o necesitas utilitza la connexió a una base de dades Oracle, llavors vostè no serà capaç d'utilitzar els mateixos controladors. Hauràs dependre de nous APIs per a cada base de dades; i això pot ser una ximpleria.
 
-As an extra note on native drivers, the mysql extension for PHP is no longer in active development, and the official status since PHP 5.4.0 is
-"Long term deprecation". This means it will be removed within the next few releases, so by PHP 5.6 (or whatever comes after 5.5) it may well be gone. If you are using `mysql_connect()` and `mysql_query()` in your applications then you will be faced with a rewrite at some point down the
-line, so the best option is to replace mysql usage with mysqli or PDO in your applications within your own development schedules so you won't
-be rushed later on. _If you are starting from scratch then absolutely do not use the mysql extension: use the [MySQLi extension][mysqli], or use PDO._
+Com una nota addicional pels controladors nadius, l'extensió MySQL per PHP ja no està en actiu desenvolupament i l'estatus oficial a partir de PHP 5.4 és "la depreciació a llarg termini". Això vol dir que s'eliminarà en les properes versions, així que per PHP 5.6 (o el que vingui a continuació 5.5), ja podia ser que s'hagi eliminat completament. 
 
-* [PHP: Choosing an API for MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
+Si utilitzeu `mysql_connect()` i `mysql_query()` en les seves aplicacions tindreu que reescriure algunes parts del vostre codi, pròximament. De manera que la millor opció és reemplaçar l'ús de MySQL amb MySQLi o PDO en les seves aplicacions de desenvolupament, per no fer-ho mes endavant. _Si vostè està començant des de zero llavors absolutament NO utilitzar l'extensió MySQL: utilitzeu la [extensió MySQLi][MySQLi], o utilitzar PDO._
+
+* [PHP: L'elecció d'un API per a MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
 
 ## PDO
 
-PDO is a database connection abstraction library &mdash;  built into PHP since 5.1.0 &mdash; that provides a common interface to talk with
-many different databases. PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types
-of database with the same API.
+PDO és una biblioteca d'abstracció connexió de base de dades &mdash; incorporat en PHP des 5.1 &mdash; que proporciona una interfície comuna per parlar amb moltes bases de dades diferents. PDO no tradueix les consultes SQL ni tampoc emular les característiques que li falten, és purament per a la connexió a múltiples tipus de base de dades amb la mateixa API.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+Una característica molt important de `PDO` permet injectar de forma segura la participació de usuaris externs (per exemple pels: IDs) en les consultes SQL sense haver de preocupar-te sobre els atacs d'injecció de bases de dades SQL. Això és possible mitjançant declaracions PDO i paràmetres enllaçats.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record from a database. This is the `wrong`
-way to do this:
+Suposem que un script PHP rep un identificador numèric com un paràmetre de consulta. Aquest ID s'ha d'utilitzar per anar a buscar un registre d'usuari a partir d'una base de dades. Aquesta és la manera `incorrecta` de fer això:
 
 {% highlight php %}
 <?php
-$pdo = new PDO('sqlite:users.db');
-$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
+$pdo = new PDO('sqlite:usuaris.db');
+$pdo->query("SELECT nom FROM usuaris WHERE id = " . $_GET['id']); // <-- NO! (Aquesta és la manera incorrecta)
+?>
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a
-heartbeat. Just imagine if a hacker passes in an inventive `id` parameter by calling a URL like
-`http://domain.com/?id=1%3BDELETE+FROM+users`.  This will set the `$_GET['id']` variable to `1;DELETE FROM users`
-which will delete all of your users! Instead, you should sanitize the ID input using PDO bound parameters.
+Aquest és el codi terrible horripile! Se està inserint un paràmetre de consulta en brut en una consulta SQL. Imagineu si un hacker passa en al paràmetre `id` inventat, cridant a una URL com `http://domini.com/?id=1%3BDELETE+FROM+users`. Això farà que la variable `$_GET['id']` passi el valor `1;DELETE FROM usuaris` i la conseqüència es que se elimini tots els usuaris de la base de dades!
+
+En el seu lloc, vostè ha de desinfectar l'entrada ID amb els paràmetres de PDO:
 
 {% highlight php %}
 <?php
-$pdo = new PDO('sqlite:users.db');
-$stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); //<-- Automatically sanitized by PDO
+$pdo = new PDO('sqlite:usuaris.db');
+$stmt = $pdo->prepare('SELECT nom FROM usuaris WHERE id = :id');
+$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // <-- Si! (Desinfectat automàticament per PDO)
 $stmt->execute();
+?>
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is introduced to the
-database preventing potential SQL injection attacks.
+Aquest és el codi `correcte`. S'utilitza un paràmetre dependent en un comunicat PDO. Això escapa a l'entrada del ID del usuari extern abans de la seva introducció a la base de dades, així prevenim els atacs d'injecció SQL.
 
-* [Learn about PDO][1]
+* [Aprèn sobre PDO][1]
 
-You should also be aware that database connections use up resources and it was not unheard-of to have resources
-exhausted if connections were not implicitly closed, however this was more common in other languages. Using PDO you
-can implicitly close the connection by destroying the object by ensuring all remaining references to it are deleted,
-ie. set to NULL.  If you don't do this explicitly, PHP will automatically close the connection when your script ends
-unless of course you are using persistent connections.
+També ha de ser conscient de que les connexions de base de dades utilitzen recursos i així que sempre que es pot es molt recomanable tancar les connexions. Fen servir PDO pots implícitament tancar la connexió mitjançant la destrucció de l'objecte, garantint totes les referències restants perquè s'eliminen, és a dir que se'ls estableix  com a valor NULL. Pero si falla, PHP haura de esperar fins que l'script finalitzi, a menys que vostè estigui utilitzant connexions persistents.
 
-* [Learn about PDO connections][5]
+* [Aprèn sobre connexions PDO][5]
 
-## Abstraction Layers
+## Capes d'abstracció
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of PDO.  These will often emulate features for
-one database system that another is missing from another by wrapping your queries in PHP methods, giving you actual database abstraction.
-This will of course add a little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and
-SQLite then a little overhead will be worth it the sake of code cleanliness.
+Molts *frameworks* proporcionen la seva pròpia capa d'abstracció que pot o no pot utilitzar com a capa superior PDO. Aquests solen emular les característiques per al sistema de base de dades d'una que altra falta d'un altre, embolicant les seves consultes en els mètodes PHP, donant-li abstracció de base de dades real. Això per descomptat, afegir una petita sobrecàrrega, però si vostè està creant una aplicació portable que necessita per treballar amb MySQL, PostgreSQL i SQLite llavors una petita sobrecàrrega valdrà la pena per neteja del codi.
 
-Some abstraction layers have been built using the PSR-0 namespace standard so can be installed in any application you like:
+Algunes capes d'abstracció s'han construït utilitzant el PSR-0 estàndard de espai de noms pel que pot instal·lar en qualsevol aplicació que vulguis:
 
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
