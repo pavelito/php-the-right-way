@@ -33,7 +33,7 @@ En PHP 5.4 es va afegir l'habilitat per vincular clausures a l'àmbit d'un objec
 
 ### Programació Meta
 
-PHP suporta diverses formes de programació meta mitjançant mecanismes com l'API de Reflexió i els Mètodes Màgics. Hi ha molts Mètodes Màgics disponibles com  `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()` i més, que permeten als desenvolupadors a connectar amb el funcionament de la classe. Sovint desenvolupadors en Ruby diuen que a PHP li falta la funció de 'method_missing`, però els aspectes d'aquesta funció estan disponibles en `__call()` i `__callStatic()`.
+PHP suporta diverses formes de programació meta mitjançant mecanismes com l'API de Reflexió i els Mètodes Màgics. Hi ha molts Mètodes Màgics disponibles com  `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()` i més, que permeten als desenvolupadors a connectar amb el funcionament de la classe. Sovint desenvolupadors en Ruby diuen que a PHP li falta la funció de `method_missing`, però els aspectes d'aquesta funció estan disponibles en `__call()` i `__callStatic()`.
 
 * [Llegir sobre els Mètodes Màgics][magic-methods]
 * [Llegir sobre Reflexion][reflection]

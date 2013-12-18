@@ -1,13 +1,13 @@
 # Benvingut
 
-Avui en dia existeix molta informaciÛ antiquada sobre PHP, que guia als nous programadors per el mal camÌ per les males practiques, i en conseq¸Ëncia el mal codi. AixÚ te que parar. _PHP: La Manera Correcte_ es una referencia practica i f‡cil d'entendre amb els millors mËtodes, est‡ndards de codi i enllaÁos a tutorials autoritzats en a la web.
+Avui en dia existeix molta informaci√≥ antiquada sobre PHP, que guia als nous programadors per el mal cam√≠ per les males practiques, i en conseq√º√®ncia el mal codi. Aix√≤ te que parar. _PHP: La Manera Correcte_ es una referencia practica i f√†cil d'entendre amb els millors m√®todes, est√†ndards de codi i enlla√ßos a tutorials autoritzats en a la web.
 
 ## Traduccions
 
-_PHP: La Manera Correcte_ ha sigut (o molt aviat ser‡) traduÔt a diferents idiomes:
+_PHP: La Manera Correcte_ ha sigut (o molt aviat ser√†) tradu√Øt a diferents idiomes:
 
 * [Bulgarian](http://bg.phptherightway.com/)
-* [Catal‡](http://ca.phptherightway.com)
+* [Catal√†](http://ca.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
 * [English](http://www.phptherightway.com)
 * [Japanese](http://ja.phptherightway.com)
@@ -17,11 +17,11 @@ _PHP: La Manera Correcte_ ha sigut (o molt aviat ser‡) traduÔt a diferents idiom
 * [Spanish](http://es.phptherightway.com)
 * [Ukrainian](http://iflista.github.com/php-the-right-way/)
 
-## AdvertËncia
+## Advert√®ncia
 
-_No existeix una manera canÚnica de utilitzar PHP_. No obstant, aquest lloc es una humida exposiciÛ dels millors mËtodes, alternatives disponibles i bona informaciÛ sobre PHP. El seu propÚsit es presentar PHP a nous desenvolupadors i oferir noves ide‡s als professionals amb experiËncia.
+_No existeix una manera can√≤nica de utilitzar PHP_. No obstant, aquest lloc es una humida exposici√≥ dels millors m√®todes, alternatives disponibles i bona informaci√≥ sobre PHP. El seu prop√≤sit es presentar PHP a nous desenvolupadors i oferir noves ide√†s als professionals amb experi√®ncia.
 
-Considerem aquest lloc com un document viu i es continuara actualitzant amb mÈs informaciÛ ˙til i exemples segons es tornen disponibles.
+Considerem aquest lloc com un document viu i es continuara actualitzant amb m√©s informaci√≥ √∫til i exemples segons es tornen disponibles.
 
 ## Com contribuir
 
@@ -29,7 +29,7 @@ Ajuda a que aquest lloc es converteixi en el millor recurs per nous programadors
 
 ## Corre la veu!
 
-_PHP: La Manera Correcte_ fa disponible imatges de pancarta (_banners_) que pots utilitzar per el teu lloc web personal. Demostra el teu suport i deixe saber als nous desenvolupadors en PHP, on es pot trobar bona informaciÛ!
+_PHP: La Manera Correcte_ fa disponible imatges de pancarta (_banners_) que pots utilitzar per el teu lloc web personal. Demostra el teu suport i deixe saber als nous desenvolupadors en PHP, on es pot trobar bona informaci√≥!
 
 [Veure les imatges de pancarta (_banners_)][2]
 
